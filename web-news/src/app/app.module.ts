@@ -12,6 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { ArticleCreationFormComponent } from './article-creation-form/article-creation-form.component';
+import { FormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -33,8 +35,6 @@ import { ArticleCreationFormComponent } from './article-creation-form/article-cr
     MatCardModule, 
     MatButtonModule,
     ReactiveFormsModule
-
-
   ],
   providers: [],
   bootstrap: [AppComponent]

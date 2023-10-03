@@ -2,44 +2,53 @@
   <h2> Add-Article-Form </h2>
   
   <form #addForm="ngForm">
-	    <!-- <div class="form-group">
-	      <label for="emailFrom">From:</label>
-	      <input type="text" id="emailFrom" name="emailFrom" #emailFrom="ngModel" class="form-control" 
-	      			 [(ngModel)]="email.from"
-	      			 required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
-	      			 [ngClass]="emailFrom.touched ? (emailFrom.valid && !emailFrom['pristine'] ? 'green-border': 'yellow-border') : ''">
-	      <br>
-	      <p *ngIf="!emailFrom.valid && !emailFrom['pristine']" class="red-font"> "From:" needs to be a mail!</p>
+	    <div class="form-group">
+	      <label for="addTitle">Title</label>
+	      <input type="text" id="addTitle" name="addTitle" #addTitle="ngModel"  
+	      			 [(ngModel)]="article.title"
+	      			 required [ngClass]="addTitle.touched ? (addTitle.valid && !addTitle['pristine'] ? '' : 'red-bg') : ''">
+	      <br><br>
+	      <!-- <p *ngIf="!addTitle.valid && !addTitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
 
 	    <div class="form-group">
-	      <label for="emailTo">To:</label>
-	      <input type="text" id="emailTo" name="emailTo" #emailTo="ngModel" class="form-control" 
-	      			 [(ngModel)]="email.to"
-	      			 required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
-	      			 [ngClass]="(emailTo.touched ? (emailTo.valid && !emailTo['pristine'] ? 'green-border': 'yellow-border') : '') ">
-	      <br>
-	      <p *ngIf="!emailTo.valid && !emailTo['pristine']" class="red-font"> "To:" needs to be a mail!</p>			 
+	      <label for="addSubtitle">Subtitle</label>
+	      <input type="text" id="addSubtitle" name="addSubtitle" #addSubtitle="ngModel" [(ngModel)]="article.subtitle" >
+	      <br><br>
+	      <!-- <p *ngIf="!addSubtitle.valid && !addSubtitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
 
 	    <div class="form-group">
-	      <label for="emailSubject">Subject:</label>
-	      <input type="text" id="emailSubject" name="emailSubject" #emailSubject="ngModel" class="form-control"
-	      			 [(ngModel)]="email.subject"
-	      			 required pattern="^.{10,50}$"
-	      			 [ngClass]="emailSubject.touched ? (emailSubject.valid && !emailSubject['pristine'] ? 'green-border': 'yellow-border') : ''">
-	      <br>
-	      <p *ngIf="!emailSubject.valid && emailSubject.touched" class="red-font"> "Subject:" Has to have from 10 to 50 characters!</p>	
+	      <label for="addCategory">Category</label>
+		  <select [(ngModel)]="article.category">
+			  <option value="National">National</option>
+			  <option value="Economy">Economy</option>
+			  <option value="Sports">Sports</option>
+			  <option value="Technology">Technology</option>
+		  </select>
+
+	      <br><br>
+	      <!-- <p *ngIf="!addCategory.valid && !addCategory['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
+	    </div>
+
+
+	    <div class="form-group">
+	      <label for="addAbstract">Abstract</label>
+	      <input type="text" id="Abstract" name="Abstract" #addAbstract="ngModel"  
+	      			 [(ngModel)]="article.abstract"
+	      			 required [ngClass]="addAbstract.touched ? (addAbstract.valid && !addAbstract['pristine'] ? '' : 'red-bg') : ''">
+	      <br><br>
+	      <!-- <p *ngIf="!Abstract.valid && !Abstract['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
 
 	    <div class="form-group">
-	      <label for="emailBody">Body:</label>
-	      <input type="text" id="emailBody" name="emailBody" #emailBody="ngModel" class="form-control" 
-	      			 [(ngModel)]="email.body"
-	      			 [ngClass]="emailBody.touched ? (emailBody.valid && !emailBody['pristine'] ? 'green-border': 'yellow-border') : ''">
-	      <br>
-	      <p *ngIf="!emailBody.valid && emailBody.touched" class="red-font"> "Body:" Has to have content!</p>	
-	    </div> -->
+	      <label for="addBody">Body</label>
+	      <input type="text" id="addBody" name="addBody" #addBody="ngModel" [(ngModel)]="article.body">
+	      <br><br>
+	      <!-- <p *ngIf="!addTitle.valid && !addTitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
+	    </div>
+
+	    <button type="submit" class="btn btn-primary" (click)="addArticle()" [disabled]="addForm.invalid">Send</button>
 	
     <!-- <button type="submit" class="btn btn-primary" (click)="sendEmail()" [disabled]="addForm.invalid">Send</button>
     <br>

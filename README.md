@@ -22,3 +22,5 @@
 * Sticking to the integrated git UI in VsCode is usually a good idea -> Less room for error. 
 * If you don't know what you are doing, google it or ask someone :)) 
 
+
+Good luck <3

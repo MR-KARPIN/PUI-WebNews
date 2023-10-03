@@ -6,48 +6,44 @@
 	      <label for="addTitle">Title</label>
 	      <input type="text" id="addTitle" name="addTitle" #addTitle="ngModel"  
 	      			 [(ngModel)]="article.title"
-	      			 required pattern="^.{10,50}$"
-	      			 [ngClass]="addTitle.touched ? (addTitle.valid && !addTitle['pristine'] ? '' : 'red-bg') : ''">
+	      			 required [ngClass]="addTitle.touched ? (addTitle.valid && !addTitle['pristine'] ? '' : 'red-bg') : ''">
 	      <br><br>
 	      <!-- <p *ngIf="!addTitle.valid && !addTitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
 
 	    <div class="form-group">
 	      <label for="addSubtitle">Subtitle</label>
-	      <input type="text" id="addSubtitle" name="addSubtitle" #addSubtitle="ngModel"  
-	      			 [(ngModel)]="article.subtitle"
-	      			 required pattern="^.{10,50}$"
-	      			 [ngClass]="addSubtitle.touched ? (addSubtitle.valid && !addSubtitle['pristine'] ? '' : 'red-bg') : ''">
+	      <input type="text" id="addSubtitle" name="addSubtitle" #addSubtitle="ngModel" [(ngModel)]="article.subtitle" >
 	      <br><br>
 	      <!-- <p *ngIf="!addSubtitle.valid && !addSubtitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
 
 	    <div class="form-group">
 	      <label for="addCategory">Category</label>
-	      <input type="text" id="addCategory" name="addCategory" #addCategory="ngModel"  
-	      			 [(ngModel)]="article.category"
-	      			 required pattern="^.{10,50}$"
-	      			 [ngClass]="addCategory.touched ? (addCategory.valid && !addCategory['pristine'] ? '' : 'red-bg') : ''">
+		  <select [(ngModel)]="article.category">
+			  <option value="National">National</option>
+			  <option value="Economy">Economy</option>
+			  <option value="Sports">Sports</option>
+			  <option value="Technology">Technology</option>
+		  </select>
+
 	      <br><br>
 	      <!-- <p *ngIf="!addCategory.valid && !addCategory['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
+
 
 	    <div class="form-group">
 	      <label for="addAbstract">Abstract</label>
 	      <input type="text" id="Abstract" name="Abstract" #addAbstract="ngModel"  
 	      			 [(ngModel)]="article.abstract"
-	      			 required pattern="^.{10,50}$"
-	      			 [ngClass]="addAbstract.touched ? (addAbstract.valid && !addAbstract['pristine'] ? '' : 'red-bg') : ''">
+	      			 required [ngClass]="addAbstract.touched ? (addAbstract.valid && !addAbstract['pristine'] ? '' : 'red-bg') : ''">
 	      <br><br>
 	      <!-- <p *ngIf="!Abstract.valid && !Abstract['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
 
 	    <div class="form-group">
 	      <label for="addBody">Body</label>
-	      <input type="text" id="addBody" name="addBody" #addBody="ngModel"  
-	      			 [(ngModel)]="article.body"
-	      			 required pattern="^.{10,50}$"
-	      			 [ngClass]="addBody.touched ? (addBody.valid && !addBody['pristine'] ? '' : 'red-bg') : ''">
+	      <input type="text" id="addBody" name="addBody" #addBody="ngModel" [(ngModel)]="article.body">
 	      <br><br>
 	      <!-- <p *ngIf="!addTitle.valid && !addTitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>

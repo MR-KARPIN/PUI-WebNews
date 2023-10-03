@@ -1,0 +1,26 @@
+<!-- login.component.html -->
+<div class="container mt-4">
+    <div class="row justify-content-end">
+      <div class="col-md-2">
+        <ng-container *ngIf="isLoggedIn; else loginForm">
+          <p>Welcome, {{ this.username }}!</p>
+          <button class="btn btn-danger" (click)="logOut()">Log Out</button>
+        </ng-container>
+        <ng-template #loginForm>
+          <form (ngSubmit)="submit()" class="form">
+            <div class="form-group">
+              <label for="username">Username</label>
+              <input type="text" id="username" class="form-control" [(ngModel)]="username" name="username" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" class="form-control" [(ngModel)]="password" name="password" required />
+            </div>
+            <div *ngIf="loginError" class="alert alert-danger">Invalid username or password.</div>
+            <button type="submit" class="btn btn-primary mt-1">Log In</button>
+          </form>
+        </ng-template>
+      </div>
+    </div>
+  </div>
+  

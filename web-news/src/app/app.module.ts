@@ -11,12 +11,15 @@ import {MatInputModule} from '@angular/material/input'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
+import { ArticleCreationFormComponent } from './article-creation-form/article-creation-form.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    ArticleCreationFormComponent
+
   ],
   imports: [
     BrowserModule,

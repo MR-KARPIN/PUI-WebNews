@@ -1,1 +1,61 @@
-<p>article-creation-form works!</p>
+<div class="container">
+  <h2> Add-Article-Form </h2>
+  
+  <form #addForm="ngForm">
+	    <!-- <div class="form-group">
+	      <label for="emailFrom">From:</label>
+	      <input type="text" id="emailFrom" name="emailFrom" #emailFrom="ngModel" class="form-control" 
+	      			 [(ngModel)]="email.from"
+	      			 required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+	      			 [ngClass]="emailFrom.touched ? (emailFrom.valid && !emailFrom['pristine'] ? 'green-border': 'yellow-border') : ''">
+	      <br>
+	      <p *ngIf="!emailFrom.valid && !emailFrom['pristine']" class="red-font"> "From:" needs to be a mail!</p>
+	    </div>
+
+	    <div class="form-group">
+	      <label for="emailTo">To:</label>
+	      <input type="text" id="emailTo" name="emailTo" #emailTo="ngModel" class="form-control" 
+	      			 [(ngModel)]="email.to"
+	      			 required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}"
+	      			 [ngClass]="(emailTo.touched ? (emailTo.valid && !emailTo['pristine'] ? 'green-border': 'yellow-border') : '') ">
+	      <br>
+	      <p *ngIf="!emailTo.valid && !emailTo['pristine']" class="red-font"> "To:" needs to be a mail!</p>			 
+	    </div>
+
+	    <div class="form-group">
+	      <label for="emailSubject">Subject:</label>
+	      <input type="text" id="emailSubject" name="emailSubject" #emailSubject="ngModel" class="form-control"
+	      			 [(ngModel)]="email.subject"
+	      			 required pattern="^.{10,50}$"
+	      			 [ngClass]="emailSubject.touched ? (emailSubject.valid && !emailSubject['pristine'] ? 'green-border': 'yellow-border') : ''">
+	      <br>
+	      <p *ngIf="!emailSubject.valid && emailSubject.touched" class="red-font"> "Subject:" Has to have from 10 to 50 characters!</p>	
+	    </div>
+
+	    <div class="form-group">
+	      <label for="emailBody">Body:</label>
+	      <input type="text" id="emailBody" name="emailBody" #emailBody="ngModel" class="form-control" 
+	      			 [(ngModel)]="email.body"
+	      			 [ngClass]="emailBody.touched ? (emailBody.valid && !emailBody['pristine'] ? 'green-border': 'yellow-border') : ''">
+	      <br>
+	      <p *ngIf="!emailBody.valid && emailBody.touched" class="red-font"> "Body:" Has to have content!</p>	
+	    </div> -->
+	
+    <!-- <button type="submit" class="btn btn-primary" (click)="sendEmail()" [disabled]="addForm.invalid">Send</button>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary" (click)="clear()">Reset</button>
+    <br>
+    <p *ngIf="showMessage" class="red-font"> uh oh!</p>
+    <p *ngIf="showMessage" class="red-font"> {{this.email.from.valid}} </p>
+    <p *ngIf="showMessage" class="red-font"> {{this.email.to.valid}} </p>
+    <p *ngIf="showMessage" class="red-font"> {{this.email.subject.valid}} </p>
+    <p *ngIf="showMessage" class="red-font"> {{this.email.body.valid}} </p>
+    <p *ngIf="showMessage" class="red-font"> {{this.email.from.valid && this.email.to.valid && this.email.body.valid}} </p>
+
+ -->
+  </form>
+  <br>
+  <br>
+  
+</div>

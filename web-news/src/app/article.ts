@@ -5,4 +5,5 @@ export interface Article {
 	category: string;
 	abstract: string;
 	body: string;
+	picture:string;
 }

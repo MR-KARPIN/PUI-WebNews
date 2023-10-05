@@ -13,6 +13,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { ArticleCreationFormComponent } from './article-creation-form/article-creation-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ArticleDetailsComponent } from './article-details/article-details.component';
 
 
 
@@ -20,7 +21,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     AppComponent,
     LoginFormComponent,
-    ArticleCreationFormComponent
+    ArticleCreationFormComponent,
+    ArticleDetailsComponent
 
   ],
   imports: [

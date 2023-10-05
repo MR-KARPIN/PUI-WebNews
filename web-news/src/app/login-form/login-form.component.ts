@@ -9,8 +9,8 @@ import { LoginService } from '../services/login/login.service';
 })
 export class LoginFormComponent implements OnInit{
   
-  username:string = "";
-  password:string="";
+  username:string  = "";
+  password:string  ="";
   isLoggedIn:boolean = false;
   loginError:boolean = false;
 
@@ -18,19 +18,19 @@ export class LoginFormComponent implements OnInit{
 
   }
   ngOnInit(): void {
-    if(this.loginService.userIsLoggedIn()){
-      this.username = this.loginService.getUserName()
+    if(this.loginService.isLogged()){
+      this.username = this.loginService.getUser()?.username
       this.isLoggedIn = true
     }
   }
 
   submit ():void{
-    if(!this.loginService.logIn(this.username,this.password)){}
+    if(!this.loginService.login(this.username,this.password)){}
       this.loginError = true;
   }
 
   logOut ():void{
-    this.loginService.logOut()
+    this.loginService.logout()
   }
   
 

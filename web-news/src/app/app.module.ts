@@ -6,14 +6,14 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginFormComponent } from './login-form/login-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule} from '@angular/material/form-field';
-import {MatInputModule} from '@angular/material/input'
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import {MatCardModule} from '@angular/material/card';
-import {MatButtonModule} from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 import { ArticleCreationFormComponent } from './article-creation-form/article-creation-form.component';
-import { FormsModule } from '@angular/forms';
 import { ArticleEditFormComponent } from './article-edit-form/article-edit-form.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -36,7 +36,8 @@ import { ArticleEditFormComponent } from './article-edit-form/article-edit-form.
     MatFormFieldModule,
     MatCardModule, 
     MatButtonModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

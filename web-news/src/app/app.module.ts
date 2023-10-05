@@ -13,6 +13,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatButtonModule} from '@angular/material/button';
 import { ArticleCreationFormComponent } from './article-creation-form/article-creation-form.component';
 import { FormsModule } from '@angular/forms';
+import { ArticleEditFormComponent } from './article-edit-form/article-edit-form.component';
 
 
 
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     AppComponent,
     LoginFormComponent,
-    ArticleCreationFormComponent
+    ArticleCreationFormComponent,
+    ArticleEditFormComponent
 
   ],
   imports: [

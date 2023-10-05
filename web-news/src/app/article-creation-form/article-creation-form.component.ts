@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Article } from '../article'
+import { NewsService } from '../services/news/news.service';
 
 @Component({
   selector: 'app-article-creation-form',
@@ -7,7 +8,7 @@ import { Article } from '../article'
   styleUrls: ['./article-creation-form.component.css']
 })
 export class ArticleCreationFormComponent {
-  article: any = { // You can use a more specific type/interface here
+  article: any = { 
     title: '',
     subtitle: '',
     category: '',
@@ -15,8 +16,13 @@ export class ArticleCreationFormComponent {
     body: ''
   };
 
-  constructor() {} 
+  constructor(private newsService : NewsService) {} 
 
-  addArticle(){}
+  addArticle(){
+    this.newsService.createArticle(this.article);
+  }
+
+
+
 
 }

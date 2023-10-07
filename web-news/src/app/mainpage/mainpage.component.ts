@@ -12,29 +12,22 @@ import { MatCardModule } from '@angular/material/card';
   
 })
 export class MainpageComponent implements OnInit {
+  showLinks:boolean = false;
   constructor() {}
 
   ngOnInit(): void {
-    this.setupNavbarToggle();
+    
   }
 
-  setupNavbarToggle() {
-    // JavaScript to toggle the visibility of the navbar links on small screens
-    const navbarLinks = document.querySelector('.navbar-links');
-    const navbarToggler = document.querySelector('.navbar-toggler');
-
-    if (navbarLinks && navbarToggler) {
-      navbarToggler.addEventListener('click', () => {
-        navbarLinks.classList.toggle('show-links');
-      });
-
-      window.addEventListener('resize', () => {
-        if (window.innerWidth > 600) {
-          navbarLinks.classList.remove('show-links');
-        }
-      });
+  /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+  myFunction() {
+    var x = document.getElementById("myTopnav");
+    if (x) { // Check if x is not null
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
     }
   }
 }
-
-

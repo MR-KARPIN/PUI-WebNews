@@ -1,11 +1,12 @@
 
-<head>
+
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/12.0.0-pre-1/angular-material.min.css">
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/12.0.0/angular-material.min.css"> -->
+
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
 
   <style>
     /* Custom CSS for hiding the navbar links on small screens */
@@ -24,35 +25,25 @@
       color: #000;
     }
   </style>
-</head>
 
 
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">EIT newspaper</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse navbar-links" id="navbarNav">
-                <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">National</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Economy</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Sports</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Technology</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">All</a>
-                </li>
-                </ul>
-            </div>
-            </nav>
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <div class="topnav" id="myTopnav">
+            <a class="header-link active">EIT Newspaper</a>
+            <a>All</a>
+            <a>National</a>
+            <a>International</a>
+            <a>Sports</a>
+            <a>Economy</a>
+            <a href="javascript:void(0);" class="icon" (click)="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div> 
+
+
 
             <div class="container">
             <!-- Search Bar -->

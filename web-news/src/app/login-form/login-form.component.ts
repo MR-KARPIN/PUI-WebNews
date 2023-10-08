@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { LoginService } from '../services/login/login.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-login-form',
@@ -24,13 +25,25 @@ export class LoginFormComponent implements OnInit{
     }
   }
 
-  submit ():void{
-    if(!this.loginService.login(this.username,this.password)){}
-      this.loginError = true;
+  submit(): void {
+    this.loginService.login(this.username, this.password).subscribe({
+      next: user => {
+        if (user) {
+          this.isLoggedIn = true;
+          this.loginError = false;
+        }
+      },
+      error: error => {
+        console.error(error);
+        this.loginError = true;
+        this.isLoggedIn = false;
+      }
+    });
   }
 
   logOut ():void{
     this.loginService.logout()
+    this.isLoggedIn = false;
   }
   
 

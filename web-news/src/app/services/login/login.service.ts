@@ -29,19 +29,12 @@ export class LoginService {
   }
 
   login(name: string, pwd: string): Observable<User> {
-    console.log("login start")
+  
     const usereq = new HttpParams()
       .set('username', name)
       .set('passwd', pwd);
 
-      console.log("params set")
 
-      console.log(this.http.post<User>(this.loginUrl, usereq).pipe(
-        tap(user => {
-          this.user = user;
-        })
-      ))
-  
     return this.http.post<User>(this.loginUrl, usereq).pipe(
       tap(user => {
         this.user = user;

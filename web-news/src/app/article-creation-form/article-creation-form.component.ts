@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Article } from '../article'
+import { Article } from '../Interfaces/article'
 import { NewsService } from '../services/news/news.service';
 
 @Component({

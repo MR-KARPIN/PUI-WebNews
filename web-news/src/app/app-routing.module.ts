@@ -7,8 +7,8 @@ import { ArticleDetailsComponent } from './article-details/article-details.compo
 import { MainpageComponent } from './mainpage/mainpage.component';
 
 const routes: Routes = [
-  {path: 'login', component: LoginFormComponent}, 
-  {path: 'edit', component: ArticleEditFormComponent}, 
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path: 'edit/:id', component: ArticleEditFormComponent}, 
   {path: 'create', component: ArticleCreationFormComponent},
   {path:"details/:id", component: ArticleDetailsComponent},
   {path:"home",component:MainpageComponent}

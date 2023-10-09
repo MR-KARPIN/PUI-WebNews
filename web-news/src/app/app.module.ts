@@ -16,6 +16,7 @@ import { MainpageComponent } from './mainpage/mainpage.component';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ArticleEditFormComponent } from './article-edit-form/article-edit-form.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ArticleDetailsComponent } from './article-details/article-details.component';
 
 
 
@@ -26,6 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     MainpageComponent, 
     LoginFormComponent,
     ArticleCreationFormComponent,
+    ArticleDetailsComponent,
     ArticleEditFormComponent
 
   ],

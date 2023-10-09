@@ -4,23 +4,24 @@
   <form #addForm="ngForm">
 	    <div class="form-group">
 	      <label for="addTitle">Title</label>
-	      <input type="text" id="addTitle" name="addTitle" #addTitle="ngModel"  
+	      
+	      <input type="text" id="addTitle" name="addTitle" #addTitle="ngModel"  class="all-forms"
 	      			 [(ngModel)]="article.title"
 	      			 required [ngClass]="addTitle.touched ? (addTitle.valid && !addTitle['pristine'] ? '' : 'red-bg') : ''">
 	      <br><br>
-	      <!-- <p *ngIf="!addTitle.valid && !addTitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
 
 	    <div class="form-group">
 	      <label for="addSubtitle">Subtitle</label>
-	      <input type="text" id="addSubtitle" name="addSubtitle" #addSubtitle="ngModel" [(ngModel)]="article.subtitle" >
+	      
+	      <input type="text" id="addSubtitle" name="addSubtitle" #addSubtitle="ngModel" [(ngModel)]="article.subtitle" class="all-forms">
 	      <br><br>
-	      <!-- <p *ngIf="!addSubtitle.valid && !addSubtitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
 
 	    <div class="form-group">
 	      <label for="addCategory">Category</label>
-		  <select [(ngModel)]="article.category">
+	      
+		  <select [(ngModel)]="article.category" name="addCategory" class="all-forms">
 			  <option value="National">National</option>
 			  <option value="Economy">Economy</option>
 			  <option value="Sports">Sports</option>
@@ -28,27 +29,28 @@
 		  </select>
 
 	      <br><br>
-	      <!-- <p *ngIf="!addCategory.valid && !addCategory['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
-
 
 	    <div class="form-group">
 	      <label for="addAbstract">Abstract</label>
-	      <input type="text" id="Abstract" name="Abstract" #addAbstract="ngModel"  
+	      
+	      <input type="text" id="Abstract" name="Abstract" #addAbstract="ngModel"  class="all-forms"
 	      			 [(ngModel)]="article.abstract"
 	      			 required [ngClass]="addAbstract.touched ? (addAbstract.valid && !addAbstract['pristine'] ? '' : 'red-bg') : ''">
-	      <br><br>
-	      <!-- <p *ngIf="!Abstract.valid && !Abstract['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
+	    <br><br>
 	    </div>
 
 	    <div class="form-group">
 	      <label for="addBody">Body</label>
-	      <input type="text" id="addBody" name="addBody" #addBody="ngModel" [(ngModel)]="article.body">
+	      
+	      <input type="text" id="addBody" name="addBody" #addBody="ngModel" [(ngModel)]="article.body" class="body-form">
 	      <br><br>
 	      <!-- <p *ngIf="!addTitle.valid && !addTitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
 
-	    <button type="submit" class="btn btn-primary" (click)="addArticle()" [disabled]="addForm.invalid">Send</button>
+	    <div *ngIf="submitDone" class="alert alert-success">Change Done!</div>
+
+	    <button type="submit" class="form-button" (click)="addArticle()" [disabled]="addForm.invalid">Send</button>
 	
     <!-- <button type="submit" class="btn btn-primary" (click)="sendEmail()" [disabled]="addForm.invalid">Send</button>
     <br>

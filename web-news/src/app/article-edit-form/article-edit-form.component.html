@@ -4,7 +4,7 @@
   <form #editForm="ngForm">
 	    <div class="form-group">
 	      <label for="editTitle">Title</label>
-	      <br><br>
+	      
 	      <input type="text" id="editTitle" name="editTitle" #editTitle="ngModel"  class="all-forms" 
 	      			 [(ngModel)]="article.title"
 	      			 required [ngClass]="editTitle.touched ? (editTitle.valid && !editTitle['pristine'] ? '' : 'red-bg') : ''">
@@ -13,7 +13,6 @@
 
 	    <div class="form-group">
 	      <label for="editSubtitle">Subtitle</label>
-	      <br><br>
 	      <input type="text" id="editSubtitle" name="editSubtitle" #editSubtitle="ngModel" [(ngModel)]="article.subtitle" 
 	      class="all-forms">
 	      <br><br>
@@ -21,8 +20,7 @@
 
 	    <div class="form-group">
 	      <label for="editCategory">Category</label>
-	      <br><br>
-		  <select [(ngModel)]="article.category" class="all-forms" name="editCategory">
+	      <select [(ngModel)]="article.category" class="all-forms" name="editCategory">
 			  <option value="National">National</option>
 			  <option value="Economy">Economy</option>
 			  <option value="Sports">Sports</option>
@@ -34,7 +32,6 @@
 
 	    <div class="form-group">
 	      <label for="editAbstract">Abstract</label>
-	      <br><br>
 	      <input type="text" id="editAbstract" name="editAbstract" #editAbstract="ngModel" class="all-forms" 
 	      			 [(ngModel)]="article.abstract"
 	      			 required [ngClass]="editAbstract.touched ? (editAbstract.valid && !editAbstract['pristine'] ? '' : 'red-bg') : ''">
@@ -43,12 +40,12 @@
 
 	    <div class="form-group">
 	      <label for="editBody">Body</label>
-	      <br><br>
 	      <input type="text" class="body-form" id="editBody" 
 	      name="editBody" #editBody="ngModel" [(ngModel)]="article.body">
 	      <br><br>
 	      <!-- <p *ngIf="!editTitle.valid && !editTitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
+	    <div *ngIf="submitDone" class="alert alert-success">Change Done!</div>
 
 	    <button type="submit" class="btn btn-primary" (click)="editArticle()" [disabled]="editForm.invalid">Send</button>
 	

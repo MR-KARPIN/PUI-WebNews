@@ -15,11 +15,12 @@ export class ArticleCreationFormComponent {
     abstract: '',
     body: ''
   };
-
+  submitDone: boolean = false;
   constructor(private newsService : NewsService) {} 
 
   addArticle(){
-    this.newsService.createArticle(this.article);
+    this.submitDone = true;
+    console.log(this.newsService.createArticle(this.article));
   }
 
 

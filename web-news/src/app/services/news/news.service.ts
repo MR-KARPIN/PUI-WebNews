@@ -86,6 +86,7 @@ export class NewsService {
 
   updateArticle(article: Article): Observable<Article> {
     console.log('Updating article id=' + article.id);
+    console.log(article);
     return this.http.post<Article>(this.articleUrl, article, this.httpOptions);
   }
 

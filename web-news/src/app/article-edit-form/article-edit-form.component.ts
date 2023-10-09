@@ -28,7 +28,9 @@ export class ArticleEditFormComponent implements OnInit {
     this.newsService.getArticle(Number(this.route.snapshot.paramMap.get("id"))).subscribe(
       (article:Article) =>{
         if(article){
+          console.log(article);
           this.article = article;
+          console.log(this.article);
         }
         else{
           this.article = {
@@ -50,8 +52,19 @@ export class ArticleEditFormComponent implements OnInit {
   } 
 
   ngOnInit(): void {}
-
+  a2: Article = {
+    id:0,
+    title:"",
+    subtitle:"",
+    category:"",
+    abstract:"",
+    body:"",
+    picture:""
+  };
+  submitDone: boolean = false;
   editArticle(){
+    this.submitDone = true;
+    console.log(this.article);
     this.newsService.updateArticle(this.article);
   }
 

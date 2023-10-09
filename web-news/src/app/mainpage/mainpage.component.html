@@ -38,6 +38,7 @@
             <a>International</a>
             <a>Sports</a>
             <a>Economy</a>
+            <app-login-form></app-login-form>
             <a href="javascript:void(0);" class="icon" (click)="myFunction()">
                 <i class="fa fa-bars"></i>
             </a>
@@ -63,74 +64,26 @@
         <!--list of articles-->
             <div class="container">
                 <div class="row">
-                <div class="col-sm">
-                    <mat-card class="example-card">
-                        <mat-card-header>
-                        <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>Shiba Inu</mat-card-title>
-                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                        </mat-card-header>
-                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                        <mat-card-content>
-                        <p>
-                            Description of article
-                        </p>
-                        </mat-card-content>
-                        <mat-card-actions>
-                        <button mat-button>LIKE</button>
-                        <button mat-button>SHARE</button>
-        <!--                <button mat-button [routerLink]="['/viewArticle]">Edit</button>
-            <button mat-button (click)="removeArticle()">Remove</button>-->
-                        </mat-card-actions>
-                    </mat-card>
-                </div>
-
-                <div class="col-sm">
-                    <mat-card class="example-card">
-                        <mat-card-header>
-                        <div mat-card-avatar class="example-header-image"></div>
-                        <mat-card-title>Shiba Inu</mat-card-title>
-                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-                        </mat-card-header>
-                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-                        <mat-card-content>
-                        <p>
-                            Description of article
-                        </p>
-                        </mat-card-content>
-                        <mat-card-actions>
-                        <button mat-button>LIKE</button>
-                        <button mat-button>SHARE</button>
-                        <!--                <button mat-button [routerLink]="['/viewArticle]">Edit</button>
-                            <button mat-button (click)="removeArticle()">Remove</button>-->
-                        </mat-card-actions>
-                    </mat-card>
-                </div>
-
-                <div class="col-sm">
-                    <mat-card class="example-card">
+                    <div *ngFor="let article of articleList" class="col-sm">
+                        <mat-card class="example-card">
                             <mat-card-header>
                             <div mat-card-avatar class="example-header-image"></div>
-                            <mat-card-title>Shiba Inu</mat-card-title>
-                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                            <mat-card-title>{{article.title}}</mat-card-title>
+                            <mat-card-subtitle>{{article.subtitle}}</mat-card-subtitle>
                             </mat-card-header>
                             <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
                             <mat-card-content>
                             <p>
-                                Description of article
+                                {{article.abstract}}
                             </p>
                             </mat-card-content>
                             <mat-card-actions>
-                            <button mat-button>LIKE</button>
-                            <button mat-button>SHARE</button>
-                            <!--                <button mat-button [routerLink]="['/viewArticle]">Edit</button>
-                                <button mat-button (click)="removeArticle()">Remove</button>-->
+                            <button mat-button>Like</button>
+                            <button mat-button>Share</button>
+                            <button *ngIf="isLoggedIn" mat-button (click)="edit(article.id)">Edit</button>
+                            <button *ngIf ="isLoggedIn" (click)="removeArticle(article)">Remove</button>
                             </mat-card-actions>
                         </mat-card>
                     </div>
-
-
-
-
-
-
+                </div>
+            </div>

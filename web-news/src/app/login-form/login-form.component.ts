@@ -45,6 +45,7 @@ export class LoginFormComponent implements OnInit{
     this.loginService.logout()
     this.isLoggedIn = false;
   }
+
   
 
 

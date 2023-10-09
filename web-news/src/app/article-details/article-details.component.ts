@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Article } from '../article';
 import { NewsService } from '../services/news/news.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import {map} from 'rxjs/operators'
+import { Article } from '../Interfaces/article';
 
 @Component({
   selector: 'app-article-details',

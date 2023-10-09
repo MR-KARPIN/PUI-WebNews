@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import User from 'src/app/Interfaces/User';
@@ -17,19 +17,30 @@ export class LoginService {
 
   private message: string = "";
 
+  private isLoggedInSubject = new BehaviorSubject<boolean>(false);
+
+  
+
   private httpOptions = {
     headers: new HttpHeaders()
       .set('Content-Type', 'x-www-form-urlencoded')
   };
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    
+  }
+
+  isLoggedIn$(): Observable<boolean> {
+    return this.isLoggedInSubject.asObservable();
+  }
 
   isLogged() {
     return this.user.username != "";
   }
 
   login(name: string, pwd: string): Observable<User> {
-  
+    
+    
     const usereq = new HttpParams()
       .set('username', name)
       .set('passwd', pwd);
@@ -38,6 +49,7 @@ export class LoginService {
     return this.http.post<User>(this.loginUrl, usereq).pipe(
       tap(user => {
         this.user = user;
+        this.isLoggedInSubject.next(true)
       })
     );
 
@@ -50,8 +62,12 @@ export class LoginService {
 
   logout() {
     this.user = {username:"",password:""};
+    this.isLoggedInSubject.next(false);
+    
+    
   }
 
+ 
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {

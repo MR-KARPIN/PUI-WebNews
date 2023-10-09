@@ -22,7 +22,7 @@
 	    <div class="form-group">
 	      <label for="editCategory">Category</label>
 	      <br><br>
-		  <select [(ngModel)]="article.category" class="all-forms">
+		  <select [(ngModel)]="article.category" class="all-forms" name="editCategory">
 			  <option value="National">National</option>
 			  <option value="Economy">Economy</option>
 			  <option value="Sports">Sports</option>
@@ -35,7 +35,7 @@
 	    <div class="form-group">
 	      <label for="editAbstract">Abstract</label>
 	      <br><br>
-	      <input type="text" id="Abstract" name="Abstract" #editAbstract="ngModel" class="all-forms" 
+	      <input type="text" id="editAbstract" name="editAbstract" #editAbstract="ngModel" class="all-forms" 
 	      			 [(ngModel)]="article.abstract"
 	      			 required [ngClass]="editAbstract.touched ? (editAbstract.valid && !editAbstract['pristine'] ? '' : 'red-bg') : ''">
 	    <br><br>
@@ -44,7 +44,8 @@
 	    <div class="form-group">
 	      <label for="editBody">Body</label>
 	      <br><br>
-	      <input type="text" class="body-form" id="editBody" name="editBody" #editBody="ngModel" [(ngModel)]="article.body">
+	      <input type="text" class="body-form" id="editBody" 
+	      name="editBody" #editBody="ngModel" [(ngModel)]="article.body">
 	      <br><br>
 	      <!-- <p *ngIf="!editTitle.valid && !editTitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>

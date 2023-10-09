@@ -1,0 +1,71 @@
+<div class="container">
+  <h2> Edit-Article-Form </h2>
+  
+  <form #editForm="ngForm">
+	    <div class="form-group">
+	      <label for="editTitle">Title</label>
+	      <br><br>
+	      <input type="text" id="editTitle" name="editTitle" #editTitle="ngModel"  class="all-forms" 
+	      			 [(ngModel)]="article.title"
+	      			 required [ngClass]="editTitle.touched ? (editTitle.valid && !editTitle['pristine'] ? '' : 'red-bg') : ''">
+	      <br><br>
+	    </div>
+
+	    <div class="form-group">
+	      <label for="editSubtitle">Subtitle</label>
+	      <br><br>
+	      <input type="text" id="editSubtitle" name="editSubtitle" #editSubtitle="ngModel" [(ngModel)]="article.subtitle" 
+	      class="all-forms">
+	      <br><br>
+	    </div>
+
+	    <div class="form-group">
+	      <label for="editCategory">Category</label>
+	      <br><br>
+		  <select [(ngModel)]="article.category" class="all-forms">
+			  <option value="National">National</option>
+			  <option value="Economy">Economy</option>
+			  <option value="Sports">Sports</option>
+			  <option value="Technology">Technology</option>
+		  </select>
+
+	      <br><br>
+	    </div>
+
+	    <div class="form-group">
+	      <label for="editAbstract">Abstract</label>
+	      <br><br>
+	      <input type="text" id="Abstract" name="Abstract" #editAbstract="ngModel" class="all-forms" 
+	      			 [(ngModel)]="article.abstract"
+	      			 required [ngClass]="editAbstract.touched ? (editAbstract.valid && !editAbstract['pristine'] ? '' : 'red-bg') : ''">
+	    <br><br>
+	    </div>
+
+	    <div class="form-group">
+	      <label for="editBody">Body</label>
+	      <br><br>
+	      <input type="text" class="body-form" id="editBody" name="editBody" #editBody="ngModel" [(ngModel)]="article.body">
+	      <br><br>
+	      <!-- <p *ngIf="!editTitle.valid && !editTitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
+	    </div>
+
+	    <button type="submit" class="btn btn-primary" (click)="editArticle()" [disabled]="editForm.invalid">Send</button>
+	
+    <!-- <button type="submit" class="btn btn-primary" (click)="sendEmail()" [disabled]="editForm.invalid">Send</button>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-primary" (click)="clear()">Reset</button>
+    <br>
+    <p *ngIf="showMessage" class="red-font"> uh oh!</p>
+    <p *ngIf="showMessage" class="red-font"> {{this.email.from.valid}} </p>
+    <p *ngIf="showMessage" class="red-font"> {{this.email.to.valid}} </p>
+    <p *ngIf="showMessage" class="red-font"> {{this.email.subject.valid}} </p>
+    <p *ngIf="showMessage" class="red-font"> {{this.email.body.valid}} </p>
+    <p *ngIf="showMessage" class="red-font"> {{this.email.from.valid && this.email.to.valid && this.email.body.valid}} </p>
+
+ -->
+  </form>
+  <br>
+  <br>
+  
+</div>

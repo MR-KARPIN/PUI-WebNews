@@ -1,0 +1,136 @@
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/12.0.0/angular-material.min.css"> -->
+
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+
+  <style>
+    /* Custom CSS for hiding the navbar links on small screens */
+    @media (max-width: 600px) {
+      .navbar-links {
+        display: none;
+      }
+
+      .navbar-toggler {
+        display: block;
+      }
+    }
+
+    /* Style for the hamburger menu icon */
+    .navbar-toggler-icon {
+      color: #000;
+    }
+  </style>
+
+
+
+        <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <div class="topnav" id="myTopnav">
+            <a class="header-link active">EIT Newspaper</a>
+            <a>All</a>
+            <a>National</a>
+            <a>International</a>
+            <a>Sports</a>
+            <a>Economy</a>
+            <a href="javascript:void(0);" class="icon" (click)="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div> 
+
+
+
+            <div class="container">
+            <!-- Search Bar -->
+            <div class="row">
+                <div class="col-md-9">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." class="search-input">
+                </div>
+                </div>
+                <div class="col-md-3">
+                <button mat-button class="search-button">Search</button>
+                </div>
+            </div>
+
+
+
+        <!--list of articles-->
+            <div class="container">
+                <div class="row">
+                <div class="col-sm">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>Shiba Inu</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                        <p>
+                            Description of article
+                        </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+        <!--                <button mat-button [routerLink]="['/viewArticle]">Edit</button>
+            <button mat-button (click)="removeArticle()">Remove</button>-->
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+
+                <div class="col-sm">
+                    <mat-card class="example-card">
+                        <mat-card-header>
+                        <div mat-card-avatar class="example-header-image"></div>
+                        <mat-card-title>Shiba Inu</mat-card-title>
+                        <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                        </mat-card-header>
+                        <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                        <p>
+                            Description of article
+                        </p>
+                        </mat-card-content>
+                        <mat-card-actions>
+                        <button mat-button>LIKE</button>
+                        <button mat-button>SHARE</button>
+                        <!--                <button mat-button [routerLink]="['/viewArticle]">Edit</button>
+                            <button mat-button (click)="removeArticle()">Remove</button>-->
+                        </mat-card-actions>
+                    </mat-card>
+                </div>
+
+                <div class="col-sm">
+                    <mat-card class="example-card">
+                            <mat-card-header>
+                            <div mat-card-avatar class="example-header-image"></div>
+                            <mat-card-title>Shiba Inu</mat-card-title>
+                            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+                            </mat-card-header>
+                            <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+                            <mat-card-content>
+                            <p>
+                                Description of article
+                            </p>
+                            </mat-card-content>
+                            <mat-card-actions>
+                            <button mat-button>LIKE</button>
+                            <button mat-button>SHARE</button>
+                            <!--                <button mat-button [routerLink]="['/viewArticle]">Edit</button>
+                                <button mat-button (click)="removeArticle()">Remove</button>-->
+                            </mat-card-actions>
+                        </mat-card>
+                    </div>
+
+
+
+
+
+

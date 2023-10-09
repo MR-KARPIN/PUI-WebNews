@@ -27,7 +27,7 @@ export class ArticleEditFormComponent implements OnInit {
         this.id = parseInt(idQueryParam, 10); // Use parseInt to parse as an integer
       } 
     })
-
+    console.log(this.id)
     this.article = this.newsService.getArticle(this.id);
   }
 

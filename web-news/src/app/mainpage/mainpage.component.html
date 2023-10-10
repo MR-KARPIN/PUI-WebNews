@@ -85,7 +85,7 @@
                             <button mat-button (click)="openArticle(article)">Read</button>
                             
                             <button *ngIf="isLoggedIn" mat-button (click)="edit(article.id)">Edit</button>
-                            <button *ngIf ="isLoggedIn" (click)="removeArticle(article)">Remove</button>
+                            <button *ngIf ="isLoggedIn" mat-button (click)="removeArticle(article)">Remove</button>
                             </mat-card-actions>
                         </mat-card>
                     </div>

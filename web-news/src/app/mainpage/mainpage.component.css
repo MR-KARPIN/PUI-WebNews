@@ -90,6 +90,11 @@
     background-color: #ddd;
     color: black;
   }
+
+  .topnav a.noHover:hover {
+    background-color: initial; /* or any other background color you want */
+    color: initial; /* or any other text color you want */
+  }
   
  
 

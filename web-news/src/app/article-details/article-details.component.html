@@ -1,21 +1,25 @@
 <div class="container ml-1">
 
-    <h1>Title</h1>
-    <p>{{article.title}}</p>
     
-    <p>Subtitle</p>
-    <p>{{article.subtitle}}</p>
+    <h1>{{article.title}}</h1>
     
-    <p>Category</p>
-    <p>{{article.category}}</p>
+    <img  [src]="'data:' + article.image_media_type + ';base64,' +
+article.image_data ">
 
-    <p>Abstract</p>
-    <p>{{article.abstract}}</p>
+
     
-    <p>Body</p>
-    <p>{{article.body}}</p>
+    <h2>{{article.subtitle}}</h2>
     
-    <!--<img src={{article?.picture}} /> -->
+
+    <strong>{{article.category}}</strong>
+
+    
+    <h3>{{article.abstract}}</h3>
+    
+    
+    <div [innerHTML]="article.body"></div>
+    
+    
     
     <button type="button" class="btn btn-secondary" (click)="routeBack()">Go back</button>
     

@@ -11,14 +11,21 @@ import { NewsService } from '../services/news/news.service';
 })
 export class ArticleEditFormComponent implements OnInit {
  article:Article = {
-    id:0,
-    title:"",
-    subtitle:"",
-    category:"",
-    abstract:"",
-    body:"",
-    picture:""
-  };
+  abstract: "",
+  aut: 0,
+  category: "",
+  id: 0,
+  id_user: 0,
+  is_deleted: 0,
+  is_public: 0,
+  body:"",
+  subtitle: "",
+  image_data: "",
+  image_media_type: "",
+  title: "",
+  update_date: "",
+  username: "",
+};
   id : number = 0;
   private articleList:Observable<Article[]>;
   constructor(private route:ActivatedRoute, private router:Router,
@@ -34,13 +41,20 @@ export class ArticleEditFormComponent implements OnInit {
         }
         else{
           this.article = {
-            id:0,
-            title:"Something went wrong",
-            subtitle:"",
-            category:"",
-            abstract:"",
+            abstract: "",
+            aut: 0,
+            category: "",
+            id: 0,
+            id_user: 0,
+            is_deleted: 0,
+            is_public: 0,
             body:"",
-            picture:"",
+            subtitle: "",
+            image_data: "",
+            image_media_type: "",
+            title: "",
+            update_date: "",
+            username: "",
           }
         }
         this.article.abstract=this.htmlToText(this.article.abstract);
@@ -53,13 +67,20 @@ export class ArticleEditFormComponent implements OnInit {
 
   ngOnInit(): void {}
   a2: Article = {
-    id:0,
-    title:"",
-    subtitle:"",
-    category:"",
-    abstract:"",
+    abstract: "",
+    aut: 0,
+    category: "",
+    id: 0,
+    id_user: 0,
+    is_deleted: 0,
+    is_public: 0,
     body:"",
-    picture:""
+    subtitle: "",
+    image_data: "",
+    image_media_type: "",
+    title: "",
+    update_date: "",
+    username: "",
   };
   submitDone: boolean = false;
   editArticle(){

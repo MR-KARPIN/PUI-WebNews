@@ -3,7 +3,11 @@ import { NewsService } from '../services/news/news.service';
 import { Observable } from 'rxjs';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import {map} from 'rxjs/operators'
-import { Article } from '../Interfaces/article';
+import {Article} from '../Interfaces/article';
+
+
+
+
 
 @Component({
   selector: 'app-article-details',
@@ -12,32 +16,50 @@ import { Article } from '../Interfaces/article';
 })
 export class ArticleDetailsComponent implements OnInit{
 
-  article:Article = {id:0,
-    title:"",
-    subtitle:"",
-    category:"",
-    abstract:"",
-    body:"",
-    picture:"",};
-  private articleList:Observable<Article[]>;
+  article:Article = {
+    aut:0,
+    abstract: "",
+    body: "",
+    category: "",
+    id: 0,
+    id_user: 0,
+    image_data: "",
+    image_media_type: "",
+    is_deleted: 0,
+    is_public: 0,
+    subtitle: "",
+    title: "",
+    update_date: "",
+    username: "",
+  };
+  
 
   constructor(private newsService:NewsService, private route:ActivatedRoute, private router:Router){
-    this.articleList = this.newsService.getArticles()
+
     this.newsService.getArticle(Number(this.route.snapshot.paramMap.get("id"))).subscribe(
       (article:Article) =>{
         if(article){
+          console.log(article)
           this.article = article
         }
         else{
-          this.article = {
-            id:0,
-            title:"Something went wrong",
-            subtitle:"",
-            category:"",
-            abstract:"",
-            body:"",
-            picture:"",
-          }
+          this.article= {
+            aut:0,
+            abstract: "",
+            body: "",
+            category: "",
+            id: 0,
+            id_user: 0,
+            image_data: "",
+            image_media_type: "",
+            is_deleted: 0,
+            is_public: 0,
+            subtitle: "",
+            title: "",
+            update_date: "",
+            username: "",
+          };
+          
         }
       }
     );

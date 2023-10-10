@@ -4,6 +4,7 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import User from 'src/app/Interfaces/User';
+import { NewsService } from '../news/news.service';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,12 @@ import User from 'src/app/Interfaces/User';
 
 export class LoginService {
 
-  private user: User = {username:"",password:""};
+  private user: User = {authorization: "",
+    apikey: "",
+    expires: "",
+    group: "",
+    user: "",
+    username: ""};
 
   private loginUrl = 'http://sanger.dia.fi.upm.es/pui-rest-news/login';
 
@@ -26,7 +32,7 @@ export class LoginService {
       .set('Content-Type', 'x-www-form-urlencoded')
   };
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient, private newsService:NewsService) { 
     
   }
 
@@ -50,6 +56,7 @@ export class LoginService {
       tap(user => {
         this.user = user;
         this.isLoggedInSubject.next(true)
+        this.newsService.setUserApiKey(user.apikey)
       })
     );
 
@@ -61,7 +68,13 @@ export class LoginService {
   }
 
   logout() {
-    this.user = {username:"",password:""};
+    this.user = {authorization: "", apikey: "",
+    expires: "",
+    group: "",
+    user: "",
+    username: ""};
+
+    this.newsService.setAnonymousApiKey();
     this.isLoggedInSubject.next(false);
     
     
@@ -71,7 +84,12 @@ export class LoginService {
 
   private handleError<T>(operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
-      this.user = {username:"",password:""};
+      this.user = {authorization: "",
+      apikey: "",
+      expires: "",
+      group: "",
+      user: "",
+      username: ""};
       // TODO: send the error to remote logging infrastructure
       console.error(error); // log to console instead
 

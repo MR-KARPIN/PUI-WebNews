@@ -1,5 +1,6 @@
 <div class="container">
-  <h2> Edit-Article-Form </h2>
+  <br>
+  <h2> Article Editor </h2>
   
   <form #editForm="ngForm">
 	    <div class="form-group">
@@ -47,7 +48,7 @@
 	    </div>
 	    <div *ngIf="submitDone" class="alert alert-success">Change Done!</div>
 
-	    <button type="submit" class="btn btn-primary" (click)="editArticle()" [disabled]="editForm.invalid">Send</button>
+	    <button type="submit" class="form-button" (click)="editArticle()" [disabled]="editForm.invalid">Send</button>
 	
     <!-- <button type="submit" class="btn btn-primary" (click)="sendEmail()" [disabled]="editForm.invalid">Send</button>
     <br>
@@ -64,6 +65,6 @@
  -->
   </form>
   <br>
-  <br>
-  
+  <button class="form-button" [routerLink]="['/home/']">Go Back</button>
+  <br>  
 </div>

@@ -4,6 +4,9 @@ import { LoginService } from '../services/login/login.service';
 import { NewsService } from '../services/news/news.service';
 import { Article } from '../Interfaces/article';
 import { Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../confirm-dialog/confirm-dialog.component';
+
 // Import other Angular Material modules as needed
 
 // Import other Angular Material modules as needed
@@ -38,7 +41,8 @@ export class MainpageComponent implements OnInit {
   isLoggedIn:boolean = false;
 
 
-  constructor(private loginService:LoginService, private newsService:NewsService,private router:Router) {
+  constructor(private loginService:LoginService, private newsService:NewsService,
+    private router:Router, private dialog: MatDialog) {
     this.newsService.getArticles().subscribe({
       next: articles => {
         if (articles){
@@ -79,9 +83,27 @@ export class MainpageComponent implements OnInit {
     this.router.navigate(['edit',id])
   }
 
-  removeArticle(article:Article):void{
-    
-    this.newsService.deleteArticle(article);
+  removeArticle(article: Article): void {
+    // Open the confirmation dialog
+    const dialogRef = this.dialog.open(ConfirmDialogComponent, {
+      data: { message: 'Are you sure you want to remove this article?' },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      if (result) {
+        // User clicked "Yes," delete the article
+        this.newsService.deleteArticle(article).subscribe(
+          (response) => {
+            console.log('Delete response:', response);
+            // Handle successful deletion, if needed.
+          },
+          (error) => {
+            console.error('Error deleting article:', error);
+            // Handle error, show a message, etc.
+          }
+        );
+      }
+    });
   }
 
   openArticle(article:Article){

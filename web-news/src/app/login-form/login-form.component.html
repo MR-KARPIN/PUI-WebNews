@@ -2,7 +2,7 @@
 <div class="container mt-4">
   <div class="row justify-content-end">
     <div class="col-md-6"> <!-- Increase the column width for a larger input field -->
-      <ng-container *ngIf="isLoggedIn; else loginForm">
+      <ng-container *ngIf="isLoggedIn; else loginForm" className="logout">
         <p>Welcome, {{ this.username }}!</p>
         <button class="btn btn-danger" (click)="logOut()">Log Out</button>
       </ng-container>

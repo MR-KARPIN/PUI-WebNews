@@ -8,6 +8,22 @@ import { Router } from '@angular/router';
 
 // Import other Angular Material modules as needed
 
+interface Article2 {
+  abstract: string;
+  aut: number;
+  category: string;
+  id: number;
+  id_user: number;
+  is_deleted: number;
+  is_public: number;
+  subtitle: string;
+  thumbnail_image: string;
+  thumbnail_media_type: string;
+  title: string;
+  update_date: string;
+  username: string;
+}
+
 @Component({
   selector: 'app-mainpage',
   templateUrl: './mainpage.component.html',
@@ -26,8 +42,19 @@ export class MainpageComponent implements OnInit {
     this.newsService.getArticles().subscribe({
       next: articles => {
         if (articles){
+          console.log("HER")
+          console.log(articles)
+          articles.forEach(article => {
+            // @ts-ignore
+            article.image_data = article.thumbnail_image
+            // @ts-ignore
+            article.image_media_type = article.thumbnail_media_type
+            
+          });
           this.articleList = articles
+          console.log(this.articleList)
         }
+      
       },
       error: error => {
         console.error(error);
@@ -57,6 +84,9 @@ export class MainpageComponent implements OnInit {
     this.newsService.deleteArticle(article);
   }
 
+  openArticle(article:Article){
+    this.router.navigate(["details",article.id])
+  }
   
 
 

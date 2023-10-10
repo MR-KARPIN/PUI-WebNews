@@ -1,4 +1,8 @@
 export default interface User  {
-    username:string,
-    password:string
+authorization: string;
+apikey: string;
+expires: string;
+group: string;
+user: string;
+username: string;
 } 

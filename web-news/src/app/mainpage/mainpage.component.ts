@@ -37,8 +37,10 @@ interface Article2 {
 export class MainpageComponent implements OnInit {
 
   showLinks:boolean = false;
-  articleList?:Article[];
+  // articleList?:Article[];
   isLoggedIn:boolean = false;
+
+  articleList: Article[] = []; // Initialize it as an empty array
 
 
   constructor(private loginService:LoginService, private newsService:NewsService,
@@ -68,7 +70,7 @@ export class MainpageComponent implements OnInit {
 
     
    
-  }
+    }
 
   ngOnInit(): void {
     this.loginService.isLoggedIn$().subscribe(status => {
@@ -91,39 +93,37 @@ export class MainpageComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
-        // User clicked "Yes," delete the article
-        this.newsService.deleteArticle(article).subscribe(
-          (response) => {
-            console.log('Delete response:', response);
-            // Handle successful deletion, if needed.
-          },
-          (error) => {
-            console.error('Error deleting article:', error);
-            // Handle error, show a message, etc.
-          }
-        );
-      }
+        // User confirmed deletion
+        const index = this.articleList.indexOf(article);
+        if (index !== -1) {
+          // Remove the article from the array
+          this.articleList.splice(index, 1);
+      
+        }
+    }
     });
   }
 
-  openArticle(article:Article){
-    this.router.navigate(["details",article.id])
-  }
   
 
+    openArticle(article:Article): void{
+      this.router.navigate(["details",article.id])
+    }
+    
 
 
 
 
-  /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
-  myFunction() {
-    var x = document.getElementById("myTopnav");
-    if (x) { // Check if x is not null
-      if (x.className === "topnav") {
-        x.className += " responsive";
-      } else {
-        x.className = "topnav";
+
+    /* Toggle between adding and removing the "responsive" class to topnav when the user clicks on the icon */
+    myFunction(): void {
+      var x = document.getElementById("myTopnav");
+      if (x) { // Check if x is not null
+        if (x.className === "topnav") {
+          x.className += " responsive";
+        } else {
+          x.className = "topnav";
+        }
       }
     }
   }
-}

@@ -23,7 +23,12 @@ export class ArticleCreationFormComponent {
     console.log(this.newsService.createArticle(this.article));
   }
 
-
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      console.log('Selected file:', file);
+    }
+  }
 
 
 }

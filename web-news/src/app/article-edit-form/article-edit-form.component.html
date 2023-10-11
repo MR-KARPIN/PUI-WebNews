@@ -54,21 +54,9 @@
 		</div>
 
 	    <button type="submit" class="form-button" (click)="editArticle()" [disabled]="editForm.invalid">Send</button>
-	
-    <!-- <button type="submit" class="btn btn-primary" (click)="sendEmail()" [disabled]="editForm.invalid">Send</button>
-    <br>
-    <br>
-    <button type="submit" class="btn btn-primary" (click)="clear()">Reset</button>
-    <br>
-    <p *ngIf="showMessage" class="red-font"> uh oh!</p>
-    <p *ngIf="showMessage" class="red-font"> {{this.email.from.valid}} </p>
-    <p *ngIf="showMessage" class="red-font"> {{this.email.to.valid}} </p>
-    <p *ngIf="showMessage" class="red-font"> {{this.email.subject.valid}} </p>
-    <p *ngIf="showMessage" class="red-font"> {{this.email.body.valid}} </p>
-    <p *ngIf="showMessage" class="red-font"> {{this.email.from.valid && this.email.to.valid && this.email.body.valid}} </p>
-
- -->
+  
   </form>
+
   <br>
   <button class="form-button" [routerLink]="['/home/']">Go Back</button>
   <br>  

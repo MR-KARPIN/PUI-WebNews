@@ -1,26 +1,30 @@
 <div class="container ml-1">
-
     
     <h1>{{article.title}}</h1>
-    
-    <img  [src]="'data:' + article.image_media_type + ';base64,' +
-article.image_data ">
-
-
-    
-    <h2>{{article.subtitle}}</h2>
-    
-
+    <mat-divider />
+    <h3 [innerHTML]="article.subtitle"></h3>
     <strong>{{article.category}}</strong>
-
+    <mat-divider ></mat-divider>
     
-    <h3>{{article.abstract}}</h3>
-    
-    
-    <div [innerHTML]="article.body"></div>
-    
-    
-    
-    <button type="button" class="btn btn-secondary" (click)="routeBack()">Go back</button>
-    
+    <div class="image-text-container">
+      <div class="image-container">
+        <img [src]="'data:' + article.image_media_type + ';base64,' + article.image_data">
+      </div>
+      <div class="text-container">
+        <mat-divider />
+        <h3 [innerHTML]="article.abstract"></h3>
+        <mat-divider />
+        <div [innerHTML]="article.body"></div>
+      </div>
     </div>
+    <br>
+    <br>
+    <button type="button" class="btn btn-secondary" (click)="routeBack()">Go back</button>
+
+    <br>
+    <br>
+
+    <p> Edited by {{article.username}}</p>
+    <p> {{article.update_date}}</p>
+  </div>
+  

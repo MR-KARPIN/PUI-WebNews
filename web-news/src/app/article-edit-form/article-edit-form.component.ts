@@ -65,6 +65,13 @@ export class ArticleEditFormComponent implements OnInit {
 
   } 
 
+  onFileSelected(event: any) {
+    const file: File = event.target.files[0];
+    if (file) {
+      console.log('Selected file:', file);
+    }
+  }
+
   ngOnInit(): void {}
   a2: Article = {
     abstract: "",
@@ -83,6 +90,7 @@ export class ArticleEditFormComponent implements OnInit {
     username: "",
   };
   submitDone: boolean = false;
+  
   editArticle(){
     this.submitDone = true;
     console.log(this.article);
@@ -94,6 +102,5 @@ export class ArticleEditFormComponent implements OnInit {
     temporaryElement.innerHTML = html;
     return temporaryElement.textContent || temporaryElement.innerText || '';
   }
-
 }
 

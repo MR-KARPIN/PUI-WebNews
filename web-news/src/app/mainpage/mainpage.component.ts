@@ -40,7 +40,13 @@ export class MainpageComponent implements OnInit {
   // articleList?:Article[];
   isLoggedIn:boolean = false;
   term: string = ''; // Initialize it here
+  categoryFilter: string = 'all'; // Default category filter
   articleList: Article[] = []; // Initialize it as an empty array
+<<<<<<< HEAD
+  categoryFilter: string = 'all'; // Default category filter
+=======
+>>>>>>> main
+  filteredArticles: Article[] = [];
 
 
   constructor(private loginService:LoginService, private newsService:NewsService,
@@ -49,7 +55,7 @@ export class MainpageComponent implements OnInit {
       next: articles => {
         if (articles){
           console.log("HER")
-          console.log(articles)
+          console.log('articles:', articles)
           articles.forEach(article => {
             // @ts-ignore
             article.image_data = article.thumbnail_image
@@ -58,7 +64,7 @@ export class MainpageComponent implements OnInit {
             
           });
           this.articleList = articles
-          console.log(this.articleList)
+          console.log('article List:', this.articleList)
         }
       
       },
@@ -67,10 +73,13 @@ export class MainpageComponent implements OnInit {
         //TODO IMplemeNT ERROR HANDLING
       }
     });
-
-    
-   
     }
+
+  setCategoryFilter(category: string): void {
+    this.categoryFilter = category;
+    this.filterArticles();
+    console.log(this.categoryFilter);
+  }
 
   ngOnInit(): void {
     this.loginService.isLoggedIn$().subscribe(status => {
@@ -79,7 +88,41 @@ export class MainpageComponent implements OnInit {
 
     // Check the initial login status
     this.isLoggedIn = this.loginService.isLogged();
+<<<<<<< HEAD
+
+    this.filterArticles();
   }
+
+  setCategoryFilter(category: string): void {
+    this.categoryFilter = category;
+    this.filterArticles();
+  }
+  
+  filterArticles() {
+    console.log('Category Filter before filtering:', this.categoryFilter);
+    if (this.categoryFilter === 'all') {
+      this.filteredArticles = this.articleList; // Show all articles
+    } else {
+      this.filteredArticles = this.articleList.filter(article => article.category === this.categoryFilter);
+    }
+    console.log('Category Filter after filtering:', this.categoryFilter);
+=======
+ 
+    this.filterArticles();
+>>>>>>> main
+  }
+
+    filterArticles() {
+      console.log('Filtered Articles before filtering:', this.filteredArticles);
+      if (this.categoryFilter === 'all') {
+        this.filteredArticles = this.articleList; // Show all articles
+      } else {
+        this.filteredArticles = this.articleList.filter(article => article.category === this.categoryFilter);
+      }
+      console.log('Filtered Articles after filtering:', this.filteredArticles);
+    }
+  
+  
 
   edit(id:number):void{
     this.router.navigate(['edit',id])

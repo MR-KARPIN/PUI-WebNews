@@ -18,6 +18,7 @@ import { ArticleEditFormComponent } from './article-edit-form/article-edit-form.
 import { HttpClientModule } from '@angular/common/http';
 import { ArticleDetailsComponent } from './article-details/article-details.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { TextfilterPipe } from './pipes/textfilter.pipe';
 
 
 
@@ -28,7 +29,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     LoginFormComponent,
     ArticleCreationFormComponent,
     ArticleDetailsComponent,
-    ArticleEditFormComponent
+    ArticleEditFormComponent,
+    TextfilterPipe
 
   ],
   imports: [

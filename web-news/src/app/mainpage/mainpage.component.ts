@@ -39,7 +39,7 @@ export class MainpageComponent implements OnInit {
   showLinks:boolean = false;
   // articleList?:Article[];
   isLoggedIn:boolean = false;
-
+  term: string = ''; // Initialize it here
   articleList: Article[] = []; // Initialize it as an empty array
 
 
@@ -94,6 +94,7 @@ export class MainpageComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result) => {
       if (result) {
         // User confirmed deletion
+        console.log(this.newsService.deleteArticle(article));
         const index = this.articleList.indexOf(article);
         if (index !== -1) {
           // Remove the article from the array

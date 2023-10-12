@@ -93,7 +93,7 @@
 
   .topnav a.noHover:hover {
     background-color: initial; /* or any other background color you want */
-    color: initial; /* or any other text color you want */
+    color: white; /* or any other text color you want */
   }
   
  

@@ -56,6 +56,7 @@ export class LoginService {
       tap(user => {
         this.user = user;
         this.isLoggedInSubject.next(true)
+        
         this.newsService.setUserApiKey(user.apikey)
       })
     );

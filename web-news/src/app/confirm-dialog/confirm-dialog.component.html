@@ -1,6 +1,8 @@
-<h1 mat-dialog-title>Confirmation</h1>
-<div mat-dialog-content>{{ data.message }}</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="onNoClick()">No</button>
-  <button mat-button color="warn" (click)="onYesClick()">Yes</button>
+
+<!-- confirm-dialog.component.html -->
+<h1 mat-dialog-title class="custom-title">Confirmation</h1>
+<div mat-dialog-content class="custom-content">{{ data.message }}</div>
+<div mat-dialog-actions class="custom-actions">
+  <button mat-button (click)="onNoClick()" class="no-button">No, I want to keep it</button>
+  <button mat-button color="warn" (click)="onYesClick()" class="yes-button">Yes, I want to remove it</button>
 </div>

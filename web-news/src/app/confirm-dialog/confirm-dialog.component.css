@@ -1,0 +1,33 @@
+/* confirm-dialog.component.css */
+.custom-title {
+    font-size: 34px;
+    color: #333; 
+    margin: 10px; 
+  }
+  
+  .custom-content {
+    font-size: 16px;
+    color: #555; 
+    margin: 10px; 
+  }
+  
+  .custom-actions {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 20px; 
+  }
+  
+  .no-button {
+    background-color: #2ea523; /* Customize the "No" button background color */
+    color: #fff; 
+    margin: 10px; 
+    padding: 3px 6px;
+  }
+  
+  .yes-button {
+    background-color: #e91e63; /* Customize the "Yes" button background color */
+    color: #fff; 
+    margin: 10px; 
+    padding: 3px 6px;
+  }
+  

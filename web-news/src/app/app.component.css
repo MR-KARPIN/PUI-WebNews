@@ -1,0 +1,7 @@
+@font-face {
+    font-family: 'YourCustomFont'; /* You can give it any name you want */
+    src: url('src/assets/Chomsky.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+  }
+  

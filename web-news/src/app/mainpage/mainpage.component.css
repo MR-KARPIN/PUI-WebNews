@@ -9,6 +9,15 @@
     background-size: cover;
 }
 
+/* Apply the custom font to elements with the "chomsky" class */
+.chomsky {
+  font-family: 'YourCustomFont', sans-serif; /* Use the name you defined in @font-face */
+}
+
+.nav-item {
+  cursor: pointer;
+}
+
 /* Center the content vertically and horizontally */
 .center-content {
     display: flex;
@@ -80,9 +89,17 @@
   }
 
   .header-link {
-    font-size: 28px; 
+    font-size: 54px; 
     font-weight: bold; 
-    
+    padding: 35px 70px;
+  
+  }
+
+  .sub-header-link {
+    font-size: 33px; 
+    font-weight: bold; 
+    padding: 10px 20px;
+  
   }
   
   /* Change the color of links on hover */
@@ -134,4 +151,35 @@
       display: block;
       text-align: left;
     }
-  } 
+  }
+  
+ /* Style for the button container */
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0; /* Remove padding */
+}
+
+
+.read-button {
+  background-color: #88da8b; /* Green background color */
+  color: #fff; /* White text color */
+  flex: 1;
+  margin: 0; /* Remove margin */
+}
+
+/* Style for the "Edit" button */
+.edit-button {
+  background-color: #96c7f0; /* Blue background color */
+  color: #fff; /* White text color */
+  flex: 1;
+  margin: 0; /* Remove margin */
+}
+
+/* Style for the "Remove" button */
+.remove-button {
+  background-color: #e28c79; /* Red background color */
+  color: #fff; /* White text color */
+  flex: 1;
+  margin: 0; /* Remove margin */
+}

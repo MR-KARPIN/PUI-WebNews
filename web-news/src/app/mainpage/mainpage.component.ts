@@ -110,19 +110,20 @@ export class MainpageComponent implements OnInit {
       data: { message: 'Are you sure you want to remove this article?' },
     });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      if (result) {
-        // User confirmed deletion
-        console.log(this.newsService.deleteArticle(article));
-        const index = this.articleList.indexOf(article);
-        if (index !== -1) {
-          // Remove the article from the array
-          this.articleList.splice(index, 1);
-      
-        }
-    }
-    });
+      dialogRef.afterClosed().subscribe((result) => {
+        if (result) {
+          // User confirmed deletion
+          console.log(this.newsService.deleteArticle(article));
+          const index = this.articleList.indexOf(article);
+           if (index !== -1) {
+            // Remove the article from the array
+            this.articleList.splice(index, 1);
+           }
+          }
+      });
   }
+    
+  
 
   
 

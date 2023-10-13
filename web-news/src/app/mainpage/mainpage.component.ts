@@ -42,10 +42,6 @@ export class MainpageComponent implements OnInit {
   term: string = ''; // Initialize it here
   categoryFilter: string = 'all'; // Default category filter
   articleList: Article[] = []; // Initialize it as an empty array
-<<<<<<< HEAD
-  categoryFilter: string = 'all'; // Default category filter
-=======
->>>>>>> main
   filteredArticles: Article[] = [];
 
 
@@ -88,28 +84,8 @@ export class MainpageComponent implements OnInit {
 
     // Check the initial login status
     this.isLoggedIn = this.loginService.isLogged();
-<<<<<<< HEAD
-
-    this.filterArticles();
-  }
-
-  setCategoryFilter(category: string): void {
-    this.categoryFilter = category;
-    this.filterArticles();
-  }
-  
-  filterArticles() {
-    console.log('Category Filter before filtering:', this.categoryFilter);
-    if (this.categoryFilter === 'all') {
-      this.filteredArticles = this.articleList; // Show all articles
-    } else {
-      this.filteredArticles = this.articleList.filter(article => article.category === this.categoryFilter);
-    }
-    console.log('Category Filter after filtering:', this.categoryFilter);
-=======
  
     this.filterArticles();
->>>>>>> main
   }
 
     filterArticles() {

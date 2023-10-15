@@ -75,10 +75,10 @@
                         <mat-card class="example-card">
                             <mat-card-header>
                             
-                            <mat-card-title (click)="openArticle(article)">{{article.title}}</mat-card-title>
+                            <mat-card-title class="nav-item" (click)="openArticle(article)">{{article.title}}</mat-card-title>
                             <mat-card-subtitle>{{article.subtitle}}</mat-card-subtitle>
                             </mat-card-header>
-                            <img mat-card-image (click)="openArticle(article)" [src]="'data:' + article.image_media_type + ';base64,' +
+                            <img mat-card-image class="nav-item" (click)="openArticle(article)" [src]="'data:' + article.image_media_type + ';base64,' +
                             article.image_data ">
                             <mat-card-content>
                             <p innerHTML="article.abstract">

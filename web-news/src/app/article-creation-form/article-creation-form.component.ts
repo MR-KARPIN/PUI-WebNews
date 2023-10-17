@@ -20,7 +20,7 @@ export class ArticleCreationFormComponent {
 
   addArticle(){
     this.submitDone = true;
-    console.log(this.newsService.createArticle(this.article));
+    console.log(this.newsService.createArticle(this.article).subscribe());
   }
 
   onFileSelected(event: any) {

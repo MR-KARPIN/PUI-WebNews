@@ -113,7 +113,7 @@ export class MainpageComponent implements OnInit {
       dialogRef.afterClosed().subscribe((result) => {
         if (result) {
           // User confirmed deletion
-          console.log(this.newsService.deleteArticle(article));
+          console.log(this.newsService.deleteArticle(article).subscribe());
           const index = this.articleList.indexOf(article);
            if (index !== -1) {
             // Remove the article from the array

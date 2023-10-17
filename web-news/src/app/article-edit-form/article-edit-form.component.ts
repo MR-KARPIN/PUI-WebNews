@@ -94,7 +94,7 @@ export class ArticleEditFormComponent implements OnInit {
   editArticle(){
     this.submitDone = true;
     console.log(this.article);
-    this.newsService.updateArticle(this.article);
+    this.newsService.updateArticle(this.article).subscribe();
   }
 
   htmlToText(html: string): string {

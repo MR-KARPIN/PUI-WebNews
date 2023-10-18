@@ -50,7 +50,7 @@
 
 	     <div class="form-group">
 		  <label for="image">Upload New Image</label>
-		  <input type="file" id="image" name="image" (change)="onFileSelected($event)" accept="image/*">
+		  <input type="file" id="image" name="image" (change)="fileChangeEvent($event)" accept="image/*">
 		</div>
 
 	    <button type="submit" class="form-button" (click)="editArticle()" [disabled]="editForm.invalid">Send</button>

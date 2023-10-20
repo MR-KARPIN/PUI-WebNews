@@ -32,7 +32,7 @@ export class ArticleCreationFormComponent {
 
   addArticle(){
     this.submitDone = true;
-    console.log(this.newsService.createArticle(this.article).subscribe());
+    console.log(this.newsService.createArticle(this.article));
   }
 
   fileChangeEvent(fileInput: any) {

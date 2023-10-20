@@ -132,9 +132,9 @@ export class ArticleEditFormComponent implements OnInit {
   submitDone2: boolean = false;
   
   editArticle(){
-    this.submitDone2 = true;
     console.log(this.article);
     this.newsService.updateArticle(this.article).subscribe();
+    this.submitDone2 = true;
   }
 
   htmlToText(html: string): string {

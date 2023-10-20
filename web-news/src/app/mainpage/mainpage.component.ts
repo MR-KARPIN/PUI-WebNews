@@ -61,6 +61,7 @@ export class MainpageComponent implements OnInit {
           });
           this.articleList = articles
           console.log('article List:', this.articleList)
+          this.filterArticles();
         }
       
       },
@@ -69,7 +70,8 @@ export class MainpageComponent implements OnInit {
         //TODO IMplemeNT ERROR HANDLING
       }
     });
-    }
+        
+  }
 
   setCategoryFilter(category: string): void {
     this.categoryFilter = category;

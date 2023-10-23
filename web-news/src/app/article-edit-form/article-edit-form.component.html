@@ -8,7 +8,7 @@
 	      
 	      <input type="text" id="editTitle" name="editTitle" #editTitle="ngModel"  class="all-forms" 
 	      			 [(ngModel)]="article.title"
-	      			 required [ngClass]="editTitle.touched ? (editTitle.valid && !editTitle['pristine'] ? '' : 'red-bg') : ''">
+	      			 required [ngClass]="editTitle.touched ? (editTitle.valid ? '' : 'alert alert-danger') : ''">
 	      <br><br>
 	    </div>
 
@@ -35,7 +35,7 @@
 	      <label for="editAbstract">Abstract</label>
 	      <input type="text" id="editAbstract" name="editAbstract" #editAbstract="ngModel" class="all-forms" 
 	      			 [(ngModel)]="article.abstract"
-	      			 required [ngClass]="editAbstract.touched ? (editAbstract.valid && !editAbstract['pristine'] ? '' : 'red-bg') : ''">
+	      			 required [ngClass]="editAbstract.touched ? (editAbstract.valid ? '' : 'alert alert-danger') : ''">
 	    <br><br>
 	    </div>
 
@@ -46,7 +46,7 @@
 	      <br><br>
 	      <!-- <p *ngIf="!editTitle.valid && !editTitle['pristine']" class="red-font"> "From:" needs to be a mail!</p> -->
 	    </div>
-	    <div *ngIf="submitDone" class="alert alert-success">Change Done!</div>
+	    <div *ngIf="submitDone2" class="alert alert-success">Change Done!</div>
 
 	     <div class="form-group">
 		  <label for="image">Upload New Image</label>

@@ -33,6 +33,7 @@
 
         <h1 class="header-link chomsky">EIT Newspaper</h1>
         <h2 class="sub-header-link chomsky">A newspaper by the Technical University of Madrid</h2>
+        <app-login-form ></app-login-form>
         <div class="topnav" id="myTopnav">
           
           <a class="nav-item" (click)="setCategoryFilter('all')">All</a>
@@ -40,7 +41,7 @@
           <a class="nav-item" (click)="setCategoryFilter('Economy')">Economy</a>
           <a class="nav-item" (click)="setCategoryFilter('Sports')">Sports</a>
           <a class="nav-item" (click)="setCategoryFilter('Technology')">Technology</a>
-          <a class="noHover"><app-login-form></app-login-form></a>
+          
           <a href="javascript:void(0);" class="icon" (click)="myFunction()">
             <i class="fa fa-bars"></i>
           </a>
@@ -86,9 +87,9 @@
                             </p>
                             </mat-card-content>
                             <mat-card-actions class="button-container">
-                              <button mat-button (click)="openArticle(article)" class="read-button">Read</button>
-                              <button *ngIf="isLoggedIn" mat-button (click)="edit(article.id)" class="edit-button">Edit</button>
-                              <button *ngIf="isLoggedIn" mat-button (click)="removeArticle(article)" class="remove-button">Remove</button>
+                              <button mat-button (click)="openArticle(article)" class="read-button m-2">Read</button>
+                              <button *ngIf="isLoggedIn" mat-button (click)="edit(article.id)" class="edit-button m-2">Edit</button>
+                              <button *ngIf="isLoggedIn" mat-button (click)="removeArticle(article)" class="remove-button m-2">Remove</button>
                             </mat-card-actions>
                         </mat-card>
                     </div>

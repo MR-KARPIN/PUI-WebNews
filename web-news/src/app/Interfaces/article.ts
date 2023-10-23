@@ -2,7 +2,7 @@ export interface Article {
 	abstract: string;
 	aut: number;
 	category: string;
-	id: number;
+	id: number | undefined;
 	id_user: number;
 	is_deleted: number;
 	is_public: number;

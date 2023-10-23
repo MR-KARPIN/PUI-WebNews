@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Article } from '../Interfaces/article'
 import { NewsService } from '../services/news/news.service';
+import { LoginService } from '../services/login/login.service';
 
 @Component({
   selector: 'app-article-creation-form',
@@ -10,29 +11,32 @@ import { NewsService } from '../services/news/news.service';
 export class ArticleCreationFormComponent {
   article:Article = {
     abstract: "",
-    aut: 0,
+    aut: 32,
     category: "",
     id: 0,
-    id_user: 0,
+    id_user: 12,
     is_deleted: 0,
-    is_public: 0,
+    is_public: 1,
     body:"",
     subtitle: "",
     image_data: "",
-    image_media_type: "",
+    image_media_type: "image/png",
     title: "",
     update_date: "",
-    username: "",
+    username:"",
   };
   imageError: null | string = "";
   isImageSaved: boolean = false;
   cardImageBase64: string = ""; 
   submitDone: boolean = false;
-  constructor(private newsService : NewsService) {} 
+  constructor(private newsService : NewsService, private loginService:LoginService) {} 
 
   addArticle(){
     this.submitDone = true;
-    console.log(this.newsService.createArticle(this.article));
+    this.article.username = this.loginService.getUser().username;
+    this.article.update_date = new Date().toISOString()
+    this.article.id = undefined;
+    console.log(this.newsService.createArticle(this.article).subscribe());
   }
 
   fileChangeEvent(fileInput: any) {
@@ -69,6 +73,11 @@ export class ArticleCreationFormComponent {
       reader.readAsDataURL(fileInput.target.files[0]);
     }
     return true;
+  }
+
+  getRandomInt(min: number, max: number): number {
+    // Generate a random integer between min (inclusive) and max (exclusive)
+    return Math.floor(Math.random() * (max - min)) + min;
   }
 
 }
